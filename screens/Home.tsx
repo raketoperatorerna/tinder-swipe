@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { View, ImageBackground, Vibration } from "react-native";
+import { View, ImageBackground, Dimensions, Vibration } from "react-native";
 import CardStack, { Card } from "react-native-card-stack-swiper";
-import { City, Filters, CardItem } from "../components";
-import styles from "../assets/styles";
+import { Brand, Filters, CardItem } from "../components";
+import styles, { DIMENSION_WIDTH } from "../assets/styles";
 import DEMO from "../assets/data/demo";
 
 const Home = () => {
@@ -16,11 +16,13 @@ const Home = () => {
             <View style={styles.containerHome}>
                 <View style={styles.top}>
                     <Filters />
+                    <Brand />
                 </View>
 
                 <CardStack
                     loop
                     verticalSwipe={false}
+                    horizontalThreshold={Dimensions.get('window').width / 9}
                     renderNoMoreCards={() => null}
                     ref={(newSwiper): void => setSwiper(newSwiper)}
                     /*onSwipeEnd={() => {

@@ -1,38 +1,40 @@
 import React from "react";
 import {
   ScrollView,
+  View,
   Text,
   TouchableOpacity,
   ImageBackground,
-  View,
   FlatList,
 } from "react-native";
-import { Icon, Message } from "../components";
+import { CardItem, Icon } from "../components";
 import DEMO from "../assets/data/demo";
 import styles, { DARK_GRAY } from "../assets/styles";
 
-const Messages = () => (
+const Wishlist = () => (
   <ImageBackground
     source={require("../assets/images/bg.png")}
     style={styles.bg}
   >
-    <View style={styles.containerMessages}>
+    <View style={styles.containerMatches}>
       <View style={styles.top}>
-        <Text style={styles.title}>Messages</Text>
+        <Text style={styles.title}>Wishlist</Text>
         <TouchableOpacity>
           <Icon name="ellipsis-vertical" color={DARK_GRAY} size={20} />
         </TouchableOpacity>
       </View>
 
       <FlatList
+        numColumns={2}
         data={DEMO}
-        keyExtractor={(item, index) => index.toString()}
+        keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => (
           <TouchableOpacity>
-            <Message
-              image={item.image}
+            <CardItem
+              images={item.images}
               name={item.name}
-              lastMessage={item.message}
+              isOnline={item.isOnline}
+              hasVariant
             />
           </TouchableOpacity>
         )}
@@ -41,4 +43,4 @@ const Messages = () => (
   </ImageBackground>
 );
 
-export default Messages;
+export default Wishlist;

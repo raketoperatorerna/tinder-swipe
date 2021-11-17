@@ -44,7 +44,6 @@ export type DataT = {
   isOnline: boolean;
   match: string;
   description: string;
-  message: string;
   images: any;
   age?: string;
   info1?: string;

@@ -16,23 +16,18 @@ import IMAGE_10 from "../images/10.jpg";
 const data: DataT[] = [
     {
         id: 1,
-        name: "Leanne Graham",
+        name: "Basic jeans",
         isOnline: true,
         match: "78",
-        description:
-            "Placeholder for description and size selection",
-        message:
-            "Placeholder for description and size selection",
+        description: "Placeholder for description and size selection basic jeans",
         images: [IMAGE_01, IMAGE_011],
     },
     {
         id: 2,
-        name: "Clementine Bauch",
+        name: "Black jeans",
         match: "93",
-        description:
-            "Placeholder for description and size selection",
+        description: "Placeholder for description and size selection black jeans",
         isOnline: false,
-        message: "Placeholder for description and size selection",
         images: [IMAGE_02, IMAGE_022],
     } /*
   {
