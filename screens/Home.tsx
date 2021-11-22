@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { View, ImageBackground, Dimensions, Vibration } from "react-native";
+import { View, ImageBackground, Dimensions, ScrollView, Vibration } from "react-native";
 import CardStack, { Card } from "react-native-card-stack-swiper";
-import { Brand, Filters, CardItem } from "../components";
+import { Brand, Filters, CardItem, ItemInfo } from "../components";
 import styles, { DIMENSION_WIDTH } from "../assets/styles";
 import DEMO from "../assets/data/demo";
 
@@ -25,6 +25,9 @@ const Home = () => {
                     horizontalThreshold={Dimensions.get('window').width / 9}
                     renderNoMoreCards={() => null}
                     ref={(newSwiper): void => setSwiper(newSwiper)}
+                    onSwipedTop={(itemIndex) => {
+                        
+                    }}
                     /*onSwipeEnd={() => {
                         Vibration.vibrate([1000], false);
                     }}*/
@@ -37,6 +40,9 @@ const Home = () => {
                                 name={item.name}
                                 description={item.description}
                                 matches={item.match}
+                                price={item.price}
+                                deliveryTime={item.deliveryTime}
+                                sizes={item.sizes}
                             />
                         </Card>
                     ))}

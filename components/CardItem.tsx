@@ -7,8 +7,10 @@ import {
     TouchableOpacity,
     Pressable,
     Button,
+    ScrollView,
 } from "react-native";
 import Icon from "./Icon";
+import { ItemInfo } from "../components";
 import { CardItemT } from "../types";
 import styles, {
     DISLIKE_ACTIONS,
@@ -27,6 +29,9 @@ const CardItem = ({
     isOnline,
     matches,
     name,
+    price,
+    deliveryTime,
+    sizes
 }: CardItemT) => {
     // Custom styling
     const fullWidth = Dimensions.get("window").width;
@@ -84,9 +89,6 @@ const CardItem = ({
                 </View>
             )}
 
-            {/* NAME */}
-            <Text style={nameStyle}>{name}</Text>
-
             {/* DESCRIPTION */}
             {showDescription && description && (
                 <View
@@ -119,6 +121,18 @@ const CardItem = ({
                         {isOnline ? "Online" : "Offline"}
                     </Text>
                 </View>
+            
+                // <ItemInfo
+                //     name={name}
+                //     price={price}
+                //     deliveryTime={deliveryTime}
+                //     sizes={sizes}
+                //     images={images}
+                //     description={description}
+                //     id={0}
+                //     isOnline={false}
+                //     match={""}
+                // />
             )}
 
             {/* ACTIONS */}

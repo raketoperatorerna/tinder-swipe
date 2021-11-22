@@ -43,11 +43,11 @@ export default StyleSheet.create({
         color: WHITE,
     },
     descriptionCardItem: {
-        textAlign: "center",
+        textAlign: "left",
         marginHorizontal: 20,
         marginBottom: 50,
         paddingTop: 50,
-        color: "white"
+        color: "#404040"
     },
     status: {
         paddingBottom: 10,

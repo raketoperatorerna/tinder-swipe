@@ -19,15 +19,25 @@ const data: DataT[] = [
         name: "Basic jeans",
         isOnline: true,
         match: "78",
-        description: "Placeholder for description and size selection basic jeans",
+        description: `5-pocket jeans in stretch cotton denim with a regular waist, zip fly and button, and slim legs.\n
+Fit - Slim fit\n
+Fabric -
+\t - Shell: Cotton 99%, Elastane 1%
+\t - Pocket lining: Polyester 65%, Cotton 35%`,
+        price: 299,
+        deliveryTime: "2-3 days",
+        sizes: ["S", "M", "L"],
         images: [IMAGE_01, IMAGE_011],
-    },
-    {
+      },
+      {
         id: 2,
         name: "Black jeans",
+        isOnline: false,
         match: "93",
         description: "Placeholder for description and size selection black jeans",
-        isOnline: false,
+        price: 399,
+        deliveryTime: "1-2 days",
+        sizes: ["S", "M", "L", "XL"],
         images: [IMAGE_02, IMAGE_022],
     } /*
   {

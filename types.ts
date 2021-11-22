@@ -2,6 +2,9 @@ export type CardItemT = {
   description?: string;
   hasActions?: boolean;
   hasVariant?: boolean;
+  price: number;
+  deliveryTime?: string;
+  sizes: Array<string>;
   images: any;
   isOnline?: boolean;
   matches?: string;
@@ -44,6 +47,9 @@ export type DataT = {
   isOnline: boolean;
   match: string;
   description: string;
+  price: number;
+  deliveryTime?: string;
+  sizes: Array<string>;
   images: any;
   age?: string;
   info1?: string;
