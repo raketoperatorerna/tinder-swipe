@@ -7,14 +7,6 @@ export const GRAY = "#757E90";
 export const DARK_GRAY = "#363636";
 export const BLACK = "#000000";
 
-export const ONLINE_STATUS = "#46A575";
-export const OFFLINE_STATUS = "#D04949";
-
-export const STAR_ACTIONS = "#FFA200";
-export const LIKE_ACTIONS = "#B644B2";
-export const DISLIKE_ACTIONS = "#363636";
-export const FLASH_ACTIONS = "#5028D7";
-
 export const DIMENSION_WIDTH = Dimensions.get("window").width;
 export const DIMENSION_HEIGHT = Dimensions.get("window").height;
 
@@ -32,50 +24,12 @@ export default StyleSheet.create({
         shadowColor: BLACK,
         shadowOffset: { height: 0, width: 0 },
     },
-    matchesCardItem: {
-        marginTop: -35,
-        backgroundColor: PRIMARY_COLOR,
-        paddingVertical: 7,
-        paddingHorizontal: 20,
-        borderRadius: 20,
-    },
-    matchesTextCardItem: {
-        color: WHITE,
-    },
     descriptionCardItem: {
         textAlign: "left",
         marginHorizontal: 20,
         marginBottom: 50,
         paddingTop: 50,
         color: "#404040"
-    },
-    status: {
-        paddingBottom: 10,
-        flexDirection: "row",
-        alignItems: "center",
-    },
-    statusText: {
-        color: GRAY,
-        fontSize: 12,
-    },
-    online: {
-        width: 6,
-        height: 6,
-        backgroundColor: ONLINE_STATUS,
-        borderRadius: 3,
-        marginRight: 4,
-    },
-    offline: {
-        width: 6,
-        height: 6,
-        backgroundColor: OFFLINE_STATUS,
-        borderRadius: 3,
-        marginRight: 4,
-    },
-    actionsCardItem: {
-        flexDirection: "row",
-        alignItems: "center",
-        paddingVertical: 30,
     },
     button: {
         width: 60,
@@ -106,24 +60,6 @@ export default StyleSheet.create({
         shadowOffset: { height: 10, width: 0 },
     },
 
-    // COMPONENT - CITY
-    city: {
-        backgroundColor: WHITE,
-        padding: 10,
-        borderRadius: 20,
-        width: 100,
-        elevation: 1,
-        shadowOpacity: 0.05,
-        shadowRadius: 10,
-        shadowColor: BLACK,
-        shadowOffset: { height: 0, width: 0 },
-    },
-    cityText: {
-        color: DARK_GRAY,
-        fontSize: 13,
-        textAlign: "center",
-    },
-
     // COMPONENT - FILTERS
     filters: {
         backgroundColor: WHITE,
@@ -140,28 +76,6 @@ export default StyleSheet.create({
         color: DARK_GRAY,
         fontSize: 13,
         textAlign: "center",
-    },
-
-    // COMPONENT - MESSAGE
-    containerMessage: {
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "flex-start",
-        flexDirection: "row",
-        paddingHorizontal: 10,
-        width: DIMENSION_WIDTH - 100,
-    },
-    avatar: {
-        borderRadius: 30,
-        width: 60,
-        height: 60,
-        marginRight: 20,
-        marginVertical: 15,
-    },
-    message: {
-        color: GRAY,
-        fontSize: 12,
-        paddingTop: 5,
     },
 
     // COMPONENT - PROFILE ITEM
@@ -219,6 +133,20 @@ export default StyleSheet.create({
         fontSize: 13,
     },
 
+    // COMPONENT - ITEMINFO
+    containerItemInfo: {
+        justifyContent: "space-between",
+        flex: 1,
+        paddingHorizontal: 10,
+    },
+
+    // COMPONENT - WHISHLIST
+    containerWhishlist: {
+        justifyContent: "space-between",
+        flex: 1,
+        paddingHorizontal: 10,
+    },
+
     // CONTAINER - GENERAL
     bg: {
         flex: 1,
@@ -238,20 +166,6 @@ export default StyleSheet.create({
     // CONTAINER - HOME
     containerHome: {
         //marginHorizontal: 10,
-    },
-
-    // CONTAINER - MATCHES
-    containerMatches: {
-        justifyContent: "space-between",
-        flex: 1,
-        paddingHorizontal: 10,
-    },
-
-    // CONTAINER - MESSAGES
-    containerMessages: {
-        justifyContent: "space-between",
-        flex: 1,
-        paddingHorizontal: 10,
     },
 
     // CONTAINER - PROFILE
