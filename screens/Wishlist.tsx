@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  ScrollView,
   View,
   Text,
   TouchableOpacity,
@@ -16,7 +15,7 @@ const Wishlist = () => (
     source={require("../assets/images/bg.png")}
     style={styles.bg}
   >
-    <View style={styles.containerMatches}>
+    <View style={styles.containerWhishlist}>
       <View style={styles.top}>
         <Text style={styles.title}>Wishlist</Text>
         <TouchableOpacity>
@@ -31,10 +30,11 @@ const Wishlist = () => (
         renderItem={({ item }) => (
           <TouchableOpacity>
             <CardItem
-              images={item.images}
               name={item.name}
-              isOnline={item.isOnline}
-              hasVariant
+              description={item.description}
+              images={item.images}
+              price={item.price}
+              sizes={item.sizes}
             />
           </TouchableOpacity>
         )}

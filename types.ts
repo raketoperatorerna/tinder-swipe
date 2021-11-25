@@ -1,14 +1,11 @@
 export type CardItemT = {
-  description?: string;
-  hasActions?: boolean;
-  hasVariant?: boolean;
-  price: number;
-  deliveryTime?: string;
-  sizes: Array<string>;
-  images: any;
-  isOnline?: boolean;
-  matches?: string;
   name: string;
+  description?: string;
+  images: any;
+  price: number;
+  sizes: Array<string>;
+  deliveryTime?: string;
+  hasActions?: boolean;
 };
 
 export type IconT = {
@@ -16,12 +13,6 @@ export type IconT = {
   size: number;
   color: string;
   style?: any;
-};
-
-export type MessageT = {
-  image: any;
-  lastMessage: string;
-  name: string;
 };
 
 export type ProfileItemT = {
@@ -41,20 +32,13 @@ export type TabBarIconT = {
   text: string;
 };
 
-export type DataT = {
+// Item information
+export type ItemT = {
   id: number;
   name: string;
-  isOnline: boolean;
-  match: string;
   description: string;
-  price: number;
-  deliveryTime?: string;
-  sizes: Array<string>;
   images: any;
-  age?: string;
-  info1?: string;
-  info2?: string;
-  info3?: string;
-  info4?: string;
-  location?: string;
+  price: number;
+  sizes: Array<string>;
+  deliveryTime?: string;
 };
