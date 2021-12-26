@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Home, Wishlist, Profile } from "./screens";
+import { ProfilePreferences } from "./components";
 import { PRIMARY_COLOR, DARK_GRAY, BLACK, WHITE } from "./assets/styles";
 import TabBarIcon from "./components/TabBarIcon";
 
@@ -68,7 +69,7 @@ const App = () => (
 
             <Tab.Screen
               name="Profile"
-              component={Profile}
+              component={ProfilePreferences}
               options={{
                 tabBarIcon: ({ focused }) => (
                   <TabBarIcon

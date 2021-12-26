@@ -15,15 +15,39 @@ export type IconT = {
   style?: any;
 };
 
-export type ProfileItemT = {
-  age?: string;
-  info1?: string;
-  info2?: string;
-  info3?: string;
-  info4?: string;
-  location?: string;
-  matches: string;
+export type ProfilePreferencesT = {
+  id: number;
+  itemPriceRange?: Array<number>;
+  sustainabilityPreference?: Array<number>;
+  sizesPrefernce?: Array<string>;
+};
+
+export type ProfileAccountDetailsT = {
+  id: number;
   name: string;
+  email: string;
+  phoneNumber: number;
+  password: string;
+};
+
+export type ProfileCreditCardInfoT = {
+  id: number;
+  cardNumber?: number;
+  expirationDate?: Date;
+  cvv?: number;
+};
+
+export type ProfileShippingAddressT = {
+  id: number;
+  country: string;
+  city: string;
+  postalCode: number;
+  streetName: string;
+  streetNumber: number;
+};
+
+export type OrdersT = {
+
 };
 
 export type TabBarIconT = {

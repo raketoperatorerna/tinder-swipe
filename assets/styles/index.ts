@@ -80,17 +80,30 @@ export default StyleSheet.create({
 
     // COMPONENT - PROFILE ITEM
     containerProfileItem: {
-        backgroundColor: WHITE,
+        alignItems: "center",
+        justifyContent: "center",
+        flex: 1,
         paddingHorizontal: 10,
         paddingBottom: 25,
         margin: 20,
-        borderRadius: 8,
-        marginTop: -65,
-        elevation: 1,
-        shadowOpacity: 0.05,
-        shadowRadius: 10,
-        shadowColor: BLACK,
-        shadowOffset: { height: 0, width: 0 },
+    },
+    pressableProfileItem: {
+        alignItems: "center",
+        justifyContent: "center",
+        flex: 1,
+        width: DIMENSION_WIDTH,
+        paddingHorizontal: 10,
+        borderBottomWidth: 0.5,
+        borderBottomColor: DARK_GRAY,
+    },
+    profileText: {
+        alignSelf: "center",
+        justifyContent: "space-evenly",
+        flexDirection: "row",
+    },
+    profileTextInput: {
+        alignSelf: "flex-end",
+        backgroundColor: WHITE,
     },
     matchesProfileItem: {
         width: 135,
