@@ -13,7 +13,7 @@ import styles, { DIMENSION_WIDTH, DIMENSION_HEIGHT, WHITE } from "../assets/styl
 
 const buttons = ['Preferences', 'Account details', 'Credit card information', 'Shipping address', 'Orders']
 
-const Profile = () => {
+const Profile = ({navigation}: any) => {
   return (
     <ImageBackground
       source={require("../assets/images/bg.png")}
@@ -21,7 +21,9 @@ const Profile = () => {
     >
       <View style={styles.containerProfileItem}>
 
-        <Pressable style={styles.pressableProfileItem} onPress={ProfilePreferences}>
+        <Pressable style={styles.pressableProfileItem} onPress={() => {
+          navigation.push("Preferences")
+        }}>
           <Text>
             Preferences
           </Text>
@@ -47,18 +49,6 @@ const Profile = () => {
           </Text>
         </Pressable>
       </View>
-      {/* <ButtonGroup
-        buttons={buttons}
-        containerStyle={{ flexDirection: 'column', height: {DIMENSION_HEIGHT- }}
-        buttonContainerStyle={{ backgroundColor: '#ebebeb', borderColor: '#ffffff' }}
-        textStyle={{ color: '#404040' }}
-        selectedButtonStyle={{ backgroundColor: '#c5c5c5' }}
-        selectedTextStyle={{ color: 'black' }}
-        // onPress={(item) => {
-        //     setSelectedIndex(item)
-        // }}
-        // selectedIndex={selectedIndex}
-    /> */}
     </ImageBackground>
   );
 };

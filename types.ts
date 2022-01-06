@@ -17,8 +17,8 @@ export type IconT = {
 
 export type ProfilePreferencesT = {
   id: number;
-  itemPriceRange?: Array<number>;
-  sustainabilityPreference?: Array<number>;
+  itemPriceRange: Array<number>;
+  sustainabilityPreference: Array<number>;
   sizesPrefernce?: Array<string>;
 };
 
