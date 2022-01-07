@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Text, View, TextInput } from "react-native";
 import { ButtonGroup } from 'react-native-elements'
 import Icon from "./Icon";
@@ -16,11 +16,8 @@ const ProfilePreferences = () => {
 
   var sustainabilityPreference = preferences.sustainabilityPreference
 
-  console.log("sustainabilityPreference", sustainabilityPreference)
-
-  const [inputPriceRange, onChangePriceRange] = React.useState(null);
-  const [selectedSustainability, onChangeSustainability] = React.useState(preferences.sustainabilityPreference);
-  console.log("selectedSustainability")
+  const [inputPriceRange, onChangePriceRange] = useState(null);
+  const [selectedSustainability, onChangeSustainability] = useState(preferences.sustainabilityPreference);
 
   return (
     <View style={styles.containerProfileItem}>
@@ -52,18 +49,9 @@ const ProfilePreferences = () => {
           textStyle={{ color: '#404040' }}
           selectedButtonStyle={{ backgroundColor: '#c5c5c5' }}
           selectedTextStyle={{ color: 'black' }}
-          onPress={(index) => {
-            onChangeSustainability(index)
-            console.log("index", index)
-            if (sustainabilityPreference.includes(index)){
-              sustainabilityPreference.splice(sustainabilityPreference.indexOf(index), 1)
-              console.log("if")
-            } else {
-              console.log("else")
-              sustainabilityPreference.push(index)
-            }
-          }}
-          selectedIndexes={sustainabilityPreference}
+          onPress={onChangeSustainability}
+          selectMultiple
+          selectedIndexes={selectedSustainability}
       />
       </View>
       <View style={styles.pressableProfileItem}>
