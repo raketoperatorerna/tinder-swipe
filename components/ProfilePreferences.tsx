@@ -7,9 +7,10 @@ import { ProfilePreferencesT } from "../types";
 import styles, { DARK_GRAY, WHITE } from "../assets/styles";
 import { ProfilePreferencesDemo } from "../assets/data/profileDemo";
 
+const MAX_SLIDER_VALUE = 2000;
+const MIN_SLIDER_VALUE = 0;
 
-
-const ProfilePreferences = () => {
+const ProfilePreferences = ({navigation}: any) => {
   const preferences = ProfilePreferencesDemo.filter(
     function(ProfilePreferencesDemo){ return ProfilePreferencesDemo.id == 1 }
   )[0];
@@ -18,6 +19,15 @@ const ProfilePreferences = () => {
 
   const [inputPriceRange, onChangePriceRange] = useState(null);
   const [selectedSustainability, onChangeSustainability] = useState(preferences.sustainabilityPreference);
+  const [multiSliderValue, setMultiSliderValue] = useState(preferences.itemPriceRange)
+
+  const multiSliderValuesChange = (values: any) => setMultiSliderValue(values)
+
+  useEffect(() => {
+    navigation.addListener("beforeRemove", () => {
+      // Add data API call to update preferences in database
+    })
+  })
 
   return (
     <View style={styles.containerProfileItem}>
@@ -28,12 +38,16 @@ const ProfilePreferences = () => {
             {'  Item price range'}
           </Text>
         </View>
-        <TextInput
-          style={styles.profileTextInput}
-          value={inputPriceRange}
-          placeholder={String(preferences.itemPriceRange[0]) + "-" + String(preferences.itemPriceRange[1]) + " kr"}
-          keyboardType="numeric"
+        <MultiSlider
+          min={MIN_SLIDER_VALUE}
+          max={MAX_SLIDER_VALUE}
+          step={25}
+          values={[multiSliderValue[0], multiSliderValue[1]]}
+          onValuesChange={multiSliderValuesChange}
         />
+        <View>
+          <Text>{multiSliderValue[0]} - {multiSliderValue[1]}</Text>
+        </View>
       </View>
       <View style={styles.pressableProfileItem}>
         <View style={styles.profileText}>
@@ -52,12 +66,13 @@ const ProfilePreferences = () => {
           onPress={onChangeSustainability}
           selectMultiple
           selectedIndexes={selectedSustainability}
-      />
+        />
       </View>
-      <View style={styles.pressableProfileItem}>
-        <Text>
-          Orders
-        </Text>
+      <View style={styles.profileText}>
+          <Icon name="pricetags-outline" size={13} color={DARK_GRAY}/>
+          <Text>
+            {'  Size preference'}
+          </Text>
       </View>
     </View>
   )
