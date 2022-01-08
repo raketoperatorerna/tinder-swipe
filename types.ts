@@ -19,7 +19,7 @@ export type ProfilePreferencesT = {
   id: number;
   itemPriceRange: Array<number>;
   sustainabilityPreference: Array<number>;
-  sizesPrefernce?: Array<string>;
+  sizesPreference?: Array<string>;
 };
 
 export type ProfileAccountDetailsT = {

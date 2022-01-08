@@ -3,12 +3,12 @@ import { Text, View, TextInput } from "react-native";
 import { ButtonGroup } from 'react-native-elements'
 import Icon from "./Icon";
 import MultiSlider from "@ptomasroos/react-native-multi-slider";
-import { ProfilePreferencesT } from "../types";
 import styles, { DARK_GRAY, WHITE } from "../assets/styles";
 import { ProfilePreferencesDemo } from "../assets/data/profileDemo";
 
 const MAX_SLIDER_VALUE = 2000;
 const MIN_SLIDER_VALUE = 0;
+const SIZES = ["XS", "S", "M", "L", "XL"]
 
 const ProfilePreferences = ({navigation}: any) => {
   const preferences = ProfilePreferencesDemo.filter(
@@ -19,6 +19,7 @@ const ProfilePreferences = ({navigation}: any) => {
 
   const [inputPriceRange, onChangePriceRange] = useState(null);
   const [selectedSustainability, onChangeSustainability] = useState(preferences.sustainabilityPreference);
+  const [selectedSizes, onChangeSizes] = useState(preferences.sizesPreference?.map((x: string) => SIZES.indexOf(x)));
   const [multiSliderValue, setMultiSliderValue] = useState(preferences.itemPriceRange)
 
   const multiSliderValuesChange = (values: any) => setMultiSliderValue(values)
@@ -69,11 +70,22 @@ const ProfilePreferences = ({navigation}: any) => {
         />
       </View>
       <View style={styles.profileText}>
-          <Icon name="pricetags-outline" size={13} color={DARK_GRAY}/>
-          <Text>
-            {'  Size preference'}
-          </Text>
+        <Icon name="pricetags-outline" size={13} color={DARK_GRAY}/>
+        <Text>
+          {'  Size preference'}
+        </Text>
       </View>
+        <ButtonGroup
+          buttons={SIZES}
+          containerStyle={{ height: 40, width: '80%' }}
+          buttonContainerStyle={{ backgroundColor: '#ebebeb', borderColor: '#ffffff' }}
+          textStyle={{ color: '#404040' }}
+          selectedButtonStyle={{ backgroundColor: '#c5c5c5' }}
+          selectedTextStyle={{ color: 'black' }}
+          onPress={onChangeSizes}
+          selectMultiple
+          selectedIndexes={selectedSizes}
+        />
     </View>
   )
 };

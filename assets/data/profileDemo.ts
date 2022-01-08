@@ -5,13 +5,13 @@ const ProfilePreferencesDemo: ProfilePreferencesT[] = [
       id: 1,
       itemPriceRange: [200, 600],
       sustainabilityPreference: [1, 2],
-      sizesPrefernce: ["S", "M"]
+      sizesPreference: ["S", "M"]
     },
     {
       id: 2,
       itemPriceRange: [500, 1000],
       sustainabilityPreference: [3],
-      sizesPrefernce: ["L", "XL"]
+      sizesPreference: ["L", "XL"]
     },
 ];
 
