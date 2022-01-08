@@ -80,17 +80,17 @@ export default StyleSheet.create({
 
     // COMPONENT - PROFILE ITEM
     containerProfileItem: {
+        flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        flex: 1,
         paddingHorizontal: 10,
         paddingBottom: 25,
         margin: 20,
     },
     pressableProfileItem: {
+        flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        flex: 1,
         width: DIMENSION_WIDTH,
         paddingHorizontal: 10,
         borderBottomWidth: 0.5,

@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Home, Wishlist, Profile } from "./screens";
 import { PRIMARY_COLOR, DARK_GRAY, BLACK, WHITE } from "./assets/styles";
 import TabBarIcon from "./components/TabBarIcon";
-import { ProfilePreferences } from "./components";
+import { ProfilePreferences, ProfileAccountDetails } from "./components";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -85,6 +85,10 @@ const App = () => (
       <Stack.Screen
           name="Preferences"
           component={ProfilePreferences}
+      />
+      <Stack.Screen 
+        name="ProfileAccountDetails"
+        component={ProfileAccountDetails} 
       />
     </Stack.Navigator>
   </NavigationContainer>

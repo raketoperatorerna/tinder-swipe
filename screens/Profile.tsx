@@ -7,11 +7,8 @@ import {
   TouchableOpacity,
   Pressable,
 } from "react-native";
-import { ButtonGroup } from 'react-native-elements';
-import { Icon, ProfilePreferences } from "../components";
+import { Icon } from "../components";
 import styles, { DIMENSION_WIDTH, DIMENSION_HEIGHT, WHITE } from "../assets/styles";
-
-const buttons = ['Preferences', 'Account details', 'Credit card information', 'Shipping address', 'Orders']
 
 const Profile = ({navigation}: any) => {
   return (
@@ -28,7 +25,9 @@ const Profile = ({navigation}: any) => {
             Preferences
           </Text>
         </Pressable>
-        <Pressable style={styles.pressableProfileItem}>
+        <Pressable style={styles.pressableProfileItem} onPress={() => {
+          navigation.push("ProfileAccountDetails")
+        }}>
           <Text>
             Account details
           </Text>
