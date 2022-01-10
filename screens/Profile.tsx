@@ -26,18 +26,22 @@ const Profile = ({navigation}: any) => {
           </Text>
         </Pressable>
         <Pressable style={styles.pressableProfileItem} onPress={() => {
-          navigation.push("ProfileAccountDetails")
+          navigation.push("Account Details")
         }}>
           <Text>
             Account details
           </Text>
         </Pressable>
-        <Pressable style={styles.pressableProfileItem}>
+        <Pressable style={styles.pressableProfileItem} onPress={() => {
+          navigation.push("Credit Card Information")
+        }}>
           <Text>
             Credit card information
           </Text>
         </Pressable>
-        <Pressable style={styles.pressableProfileItem}>
+        <Pressable style={styles.pressableProfileItem} onPress={() => {
+          navigation.push("Shipping Address")
+        }}>
           <Text>
             Shipping address
           </Text>

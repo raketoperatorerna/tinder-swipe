@@ -26,7 +26,7 @@ export type ProfileAccountDetailsT = {
   id: number;
   name: string;
   email: string;
-  phoneNumber: number;
+  phoneNumber: string;
   password: string;
 };
 
@@ -41,9 +41,8 @@ export type ProfileShippingAddressT = {
   id: number;
   country: string;
   city: string;
-  postalCode: number;
-  streetName: string;
-  streetNumber: number;
+  postalCode: string;
+  address: string;
 };
 
 export type OrdersT = {

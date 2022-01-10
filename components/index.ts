@@ -5,3 +5,5 @@ export { default as ItemInfo } from "./ItemInfo";
 export { default as Icon } from "./Icon";
 export { default as ProfilePreferences } from "./ProfilePreferences";
 export { default as ProfileAccountDetails } from "./ProfileAccountDetails";
+export { default as ProfileCreditCardInformation } from "./ProfileCreditCardInformation";
+export { default as ProfileShippingAddress } from "./ProfileShippingAddress";

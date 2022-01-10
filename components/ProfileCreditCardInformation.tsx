@@ -1,20 +1,15 @@
 import React, {useEffect, useState} from "react";
 import { Text, View, TextInput } from "react-native";
+import { CreditCardInput, LiteCreditCardInput } from "react-native-credit-card-input";
 import { ButtonGroup, Input } from 'react-native-elements'
 import Icon from "./Icon";
-import MultiSlider from "@ptomasroos/react-native-multi-slider";
 import styles, { DARK_GRAY, WHITE } from "../assets/styles";
-import { ProfileAccountDetailsDemo } from "../assets/data/profileDemo";
+import { ProfilePreferencesDemo } from "../assets/data/profileDemo";
 
-const ProfileAccountDetails = ({navigation}: any) => {
-  const preferences = ProfileAccountDetailsDemo.filter(
-    function(x){ return x.id == 1 }
+const ProfileCreditCardInformation = ({navigation}: any) => {
+  const preferences = ProfilePreferencesDemo.filter(
+    function(ProfilePreferencesDemo){ return ProfilePreferencesDemo.id == 1 }
   )[0];
-
-  const [name, onChangeName] = useState(preferences.name)
-  const [email, onChangeEmail] = useState(preferences.email)
-  const [phoneNr, onChangePhoneNr] = useState(preferences.phoneNumber)
-  const [password, onChangePassword] = useState("")
 
   useEffect(() => {
     navigation.addListener("beforeRemove", () => {
@@ -24,31 +19,28 @@ const ProfileAccountDetails = ({navigation}: any) => {
 
   return (
     <View style={styles.containerProfileItem}>
-      <View style={styles.pressableProfileItem}>
+
+    
+
+      {/* <View style={styles.pressableProfileItem}>
         <View style={styles.profileText}>
         <Icon name="person-outline" size={13} color={DARK_GRAY}/>
           <Text>
-            {'  Name '}
+            {'  Card Number '}
           </Text>
         </View>
         <Input
-          value={name}
-          textContentType="name"
-          onChangeText={onChangeName}
-          placeholder="Johnita Stenbäck"
+            placeholder="Johnita Stenbäck"
         />
       </View>
       <View style={styles.pressableProfileItem}>
         <View style={styles.profileText}>
         <Icon name="mail-outline" size={13} color={DARK_GRAY}/>
           <Text>
-            {'  Email '}
+            {'  Exp date '}
           </Text>
         </View>
         <Input
-            value={email}
-            textContentType="emailAddress"
-            onChangeText={onChangeEmail}
             placeholder="gabriella.stenback@gmail.com"
         />
       </View>
@@ -56,14 +48,11 @@ const ProfileAccountDetails = ({navigation}: any) => {
         <View style={styles.profileText}>
         <Icon name="call-outline" size={13} color={DARK_GRAY}/>
           <Text>
-            {'  Phone number '}
+            {'  CVV '}
           </Text>
         </View>
         <Input
-          value={phoneNr}
-          textContentType="telephoneNumber"
-          onChangeText={onChangePhoneNr}
-          keyboardType="numeric"
+            placeholder="+46739283619"
         />
       </View>
       <View style={styles.pressableProfileItem}>
@@ -74,14 +63,11 @@ const ProfileAccountDetails = ({navigation}: any) => {
           </Text>
         </View>
         <Input
-          value={password}
-          textContentType="password"
-          onChangeText={onChangePassword}
-          placeholder="*****************"
+            placeholder="*****************"
         />
-      </View>
+      </View> */}
     </View>
   )
 };
 
-export default ProfileAccountDetails;
+export default ProfileCreditCardInformation;

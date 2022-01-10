@@ -20,14 +20,14 @@ const ProfileAccountDetailsDemo: ProfileAccountDetailsT[] = [
     id: 1,
     name: "Karl Svensson",
     email: "karl.svensson@gmail.com",
-    phoneNumber: 737489201,
+    phoneNumber: "737489201",
     password: "hejhej",
   },
   {
     id: 2,
     name: "Oscar Andersson",
     email: "oscar.andersson@gmail.com",
-    phoneNumber: 771829304,
+    phoneNumber: "771829304",
     password: "misse",
   },
 ];
@@ -52,17 +52,15 @@ const ProfileShippingAddressDemo: ProfileShippingAddressT[] = [
     id: 1,
     country: "Sweden",
     city: "Stockholm",
-    postalCode: 12345,
-    streetName: "Regeringsgatan",
-    streetNumber: 4,
+    postalCode: "123 45",
+    address: "Regeringsgatan 4",
   },
   {
     id: 2,
     country: "Sweden",
     city: "Öresund",
-    postalCode: 36789,
-    streetName: "Hemliga stigen",
-    streetNumber: 22,
+    postalCode: "367 89",
+    address: "Hemliga stigen 22",
   },
 ];
 
