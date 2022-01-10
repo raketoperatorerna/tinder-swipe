@@ -98,6 +98,10 @@ const App = () => (
         name="Shipping Address"
         component={ProfileShippingAddress} 
       />
+      <Stack.Screen 
+        name="Item Info"
+        component={ProfileShippingAddress} 
+      />
     </Stack.Navigator>
   </NavigationContainer>
 );

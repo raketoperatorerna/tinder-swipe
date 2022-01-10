@@ -5,7 +5,7 @@ import { Brand, Filters, CardItem, ItemInfo } from "../components";
 import styles from "../assets/styles";
 import DEMO from "../assets/data/demo";
 
-const Home = () => {
+const Home = ({navigation}: any) => {
     const [swiper, setSwiper] = useState<CardStack | null>(null);
 
     return (
@@ -35,6 +35,7 @@ const Home = () => {
                                 price={item.price}
                                 sizes={item.sizes}
                                 deliveryTime={item.deliveryTime}
+                                navigation={navigation}
                                 hasActions
                             />
                         </Card>

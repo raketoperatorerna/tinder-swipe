@@ -5,6 +5,7 @@ import {
     Image,
     Pressable,
     Button,
+    Dimensions
 } from "react-native";
 import { CardItemT } from "../types";
 import styles, { DIMENSION_WIDTH, DIMENSION_HEIGHT } from "../assets/styles";
@@ -17,7 +18,8 @@ const CardItem = ({
     sizes,
     deliveryTime,
     hasActions,
-}: CardItemT) => {
+    navigation
+}: any) => {
     // Custom styling
     const [showDescription, setShowDescription] = useState(false);
 
@@ -36,11 +38,17 @@ const CardItem = ({
             {/* IMAGE */}
             <Pressable
                 onPress={(e) => {
-                    setImageIndex(imageIndex == 0 ? 1 : 0);
-                    console.log(e)
-                }}
-                onLongPress={() => {
-                    setShowDescription(!showDescription);
+                    console.log("This is press element: ", e.nativeEvent.locationY)
+                    if(e.nativeEvent.locationY > DIMENSION_HEIGHT * 0.5) {
+                        console.log("mer info")
+                        navigation.push("Item Info")
+                    } else if (e.nativeEvent.locationX < DIMENSION_WIDTH * 0.5) {
+                        console.log("image left")
+                        setImageIndex(imageIndex == 0 ? 1 : 0)
+                    } else {
+                        setImageIndex(imageIndex == 0 ? 1 : 0)
+                        console.log("image right")
+                    }
                 }}
             >
                 <Image source={images[imageIndex]} style={imageStyle} />
