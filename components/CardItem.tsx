@@ -29,7 +29,7 @@ const CardItem = ({
         {
             width: DIMENSION_WIDTH,
             height: DIMENSION_HEIGHT,
-            margin: 0,
+            margin: 0
         },
     ];
 
@@ -41,12 +41,19 @@ const CardItem = ({
                     console.log("This is press element: ", e.nativeEvent.locationY)
                     if(e.nativeEvent.locationY > DIMENSION_HEIGHT * 0.5) {
                         console.log("mer info")
-                        navigation.push("Item Info")
+                        navigation.push("Item Info", {
+                            name,
+                            description,
+                            images,
+                            price,
+                            sizes,
+                            deliveryTime,
+                        })
                     } else if (e.nativeEvent.locationX < DIMENSION_WIDTH * 0.5) {
                         console.log("image left")
-                        setImageIndex(imageIndex == 0 ? 1 : 0)
+                        setImageIndex(imageIndex == 0 ? images.length-1 : imageIndex-1)
                     } else {
-                        setImageIndex(imageIndex == 0 ? 1 : 0)
+                        setImageIndex((images.length-1) == imageIndex ? 0 : imageIndex+1)
                         console.log("image right")
                     }
                 }}
