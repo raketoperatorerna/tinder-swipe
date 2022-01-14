@@ -7,6 +7,7 @@ import DEMO from "../assets/data/demo";
 
 const Home = ({navigation}: any) => {
     const [swiper, setSwiper] = useState<CardStack | null>(null);
+    const [clothingList, setClothingList] = useState(DEMO);
 
     return (
         <ImageBackground
@@ -25,8 +26,11 @@ const Home = ({navigation}: any) => {
                     horizontalThreshold={Dimensions.get('window').width / 9}
                     renderNoMoreCards={() => null}
                     ref={(newSwiper): void => setSwiper(newSwiper)}
+                    onSwipe={() => {
+                        setClothingList([...clothingList, DEMO[0]])
+                    }}
                 >
-                    {DEMO.map((item) => (
+                    {clothingList.map((item) => (
                         <Card key={item.id}>
                             <CardItem
                                 name={item.name}

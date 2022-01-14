@@ -5,7 +5,8 @@ import {
     Image,
     Pressable,
     Button,
-    Dimensions
+    Dimensions,
+    Vibration
 } from "react-native";
 import { CardItemT } from "../types";
 import styles, { DIMENSION_WIDTH, DIMENSION_HEIGHT } from "../assets/styles";
@@ -17,29 +18,36 @@ const CardItem = ({
     price,
     sizes,
     deliveryTime,
+    height,
+    width,
     hasActions,
     navigation
 }: any) => {
     // Custom styling
     const [showDescription, setShowDescription] = useState(false);
-
+    const [heightOfView, setHeightOfView] = useState(0);
     const [imageIndex, setImageIndex] = useState(0);
 
     const imageStyle = [
         {
-            width: DIMENSION_WIDTH,
-            height: DIMENSION_HEIGHT,
-            margin: 0
+            flex: 1,
+            width: "100%",
+            height: "100%",
+            margin: 0,
         },
     ];
 
     return (
-        <View style={styles.containerCardItem}>
+        <View style={[{height: height??DIMENSION_HEIGHT-100, width: width??DIMENSION_WIDTH}, styles.containerCardItem]}>
             {/* IMAGE */}
             <Pressable
+                onLayout={(event) => {
+                    var {height} = event.nativeEvent.layout;
+                    setHeightOfView(height)
+                }}
                 onPress={(e) => {
                     console.log("This is press element: ", e.nativeEvent.locationY)
-                    if(e.nativeEvent.locationY > DIMENSION_HEIGHT * 0.5) {
+                    if(e.nativeEvent.locationY > heightOfView * 0.4) {
                         console.log("mer info")
                         navigation.push("Item Info", {
                             name,
@@ -57,6 +65,7 @@ const CardItem = ({
                         console.log("image right")
                     }
                 }}
+                style={{flex: 1, width: "100%", height: "100%"}}
             >
                 <Image source={images[imageIndex]} style={imageStyle} />
             </Pressable>
